@@ -13,7 +13,7 @@ source venv/bin/activate
 
 # Install dependencies and runs
 pip install -r requirements.txt
-python devdonalds.py
+python3 devdonalds.py
 
 trap cleanup EXIT
 

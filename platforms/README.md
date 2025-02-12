@@ -10,7 +10,19 @@ If you don't manage to get this working we'll still want to hear about what you 
 ---
 
 > ANSWER BOX
-```
-// TODO: Fill me in!
 
+### Initial Planning
+
+1. Important Words (Objectives)
+    - Words I know: Matrix (Heard about it in a random Youtube video saying it was pretty dangerous because of its decentralised nature)
+    - Words idk: Synapse, federated
+2. Learn how to host a Synapse server with Python
+3. Make a Synapse server, make it federated (publicly reachable?)
+4. Send a message
+
+### A brief log
+
+1. Learning how to host a Synapse server on Youtube (https://youtu.be/aeps4cicDoI)
+
+```
 ```
