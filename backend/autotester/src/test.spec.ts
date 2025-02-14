@@ -116,12 +116,12 @@ describe("Task 3", () => {
     it("What is bro doing - Get ingredient", async () => {
       const resp = await postEntry({
         type: "ingredient",
-        name: "beef",
+        name: "pork",
         cookTime: 2,
       });
       expect(resp.status).toBe(200);
 
-      const resp2 = await getTask3("beef");
+      const resp2 = await getTask3("pork");
       expect(resp2.status).toBe(400);
     });
 
@@ -156,6 +156,69 @@ describe("Task 3", () => {
 
       const resp3 = await getTask3("Skibidi");
       expect(resp3.status).toBe(200);
+    });
+
+    it("Real", async () => {
+      const ingredients = [
+        { type: "ingredient", name: "Beef", cookTime: 5 },
+        { type: "ingredient", name: "Egg", cookTime: 3 },
+        { type: "ingredient", name: "Flour", cookTime: 0 },
+        { type: "ingredient", name: "Tomato", cookTime: 2 },
+      ];
+
+      for (const ingredient of ingredients) {
+        const resp = await postEntry(ingredient);
+        expect(resp.status).toBe(200);
+      }
+
+      const recipes = [
+        {
+          type: "recipe",
+          name: "Meatball",
+          requiredItems: [
+            { name: "Beef", quantity: 2 },
+            { name: "Egg", quantity: 1 },
+          ],
+        },
+        {
+          type: "recipe",
+          name: "Pasta",
+          requiredItems: [
+            { name: "Flour", quantity: 3 },
+            { name: "Egg", quantity: 1 },
+          ],
+        },
+        {
+          type: "recipe",
+          name: "Skibidi Spaghetti",
+          requiredItems: [
+            { name: "Meatball", quantity: 3 },
+            { name: "Pasta", quantity: 1 },
+            { name: "Tomato", quantity: 2 },
+          ],
+        },
+      ];
+
+      for (const recipe of recipes) {
+        const resp = await postEntry(recipe);
+        expect(resp.status).toBe(200);
+      }
+
+      const resp = await getTask3("Skibidi Spaghetti");
+      expect(resp.status).toBe(200);
+
+      const expectedResponse = {
+        name: "Skibidi Spaghetti",
+        cookTime: 46,
+        ingredients: [
+          { name: "Tomato", quantity: 2 },
+          { name: "Beef", quantity: 6 },
+          { name: "Egg", quantity: 4 },
+          { name: "Flour", quantity: 3 },
+        ],
+      };
+
+      expect(resp.body).toEqual(expectedResponse);
     });
   });
 });
