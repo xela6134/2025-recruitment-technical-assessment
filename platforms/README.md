@@ -9,20 +9,25 @@ If you don't manage to get this working we'll still want to hear about what you 
 
 ---
 
-> ANSWER BOX
+# ANSWER SECTION
 
 ### Initial Planning
 
 1. Important Words (Objectives)
     - Words I know: Matrix (Heard about it in a random Youtube video saying it was pretty dangerous because of its decentralised nature)
-    - Words idk: Synapse, federated
+    - Words idk: Synapse, Conduwuit, federated
 2. Learn how to host a Synapse server with Python
 3. Make a Synapse server, make it federated (publicly reachable?)
 4. Send a message
 
 ### A brief log
 
-1. Learning how to host a Synapse server on Youtube (https://youtu.be/aeps4cicDoI)
-
-```
-```
+0. I know the basics about Matrix that it's decentralised (and can be used with unlawful purposes)
+1. Just to reinforce my learning, learnt the technical foundations of Matrix from docs & Youtube
+2. Tried to learn Synapse after hearing Conduwuit is Rust-based (Haven't done Rust before)
+3. Realised I don't need to know Rust to run Conduwuit
+4. Started learning Conduwuit, reading the official README on Conduwuit's Github & official site
+5. Changed stuff within my local `.toml` file
+6. Set up a conduwuit server locally with a self-signed cert
+7. Realised self-signed certs will logically not work
+8. Frankly I ran out of time because I have other priorities to do 😭
